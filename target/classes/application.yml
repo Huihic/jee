@@ -1,0 +1,83 @@
+server:
+  #访问端口号
+  port: 8092
+  #编码格式
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  #数据库相关配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dbaa
+    username: root
+    password: 1234
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 10
+      max-lifetime: 10000
+
+
+
+  #项目启动后直接访问templates下的html
+  #resources:
+  #  static-locations: classpath:/
+#  freemarker:
+#    suffix: .html
+#    template-loader-path: classpath:/templates/
+
+#  #发送邮件相关??修改？
+  mail:
+    default-encoding: UTF-8
+    host: smtp.qq.com
+    port: 465
+    protocol: smtps
+    username: 3399831059@qq.com
+    password: xwsjprjxfctrcigf
+    properties:
+      smtp:
+        socketFactory:
+          port: 465
+        socketFactoryClass: javax.net.ssl.SSLSocketFactory
+#        #开启控制台会打印发送信息，方便调试
+#        properties:
+#          mai:
+#            debug: true
+        ssl:
+          enable: true
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          #QQ邮件开启ssl
+#          mail:
+#            smtp:
+#              ssl:
+#                enable: true
+#                auth: true
+#                starttls:
+#                  enable: true
+#                  required: true
+
+#  thymeleaf:
+#    mode: HTML
+#    encoding: UTF-8
+#    cache: false
+#    prefix: /templates/
+#    suffix: .html
+#    check-template-location: true
+#  web:
+#    resources:
+#      static-locations: classpath:/resources/, classpath:/static/, classpath:/public/
+
+
+
+
+
+
+
+
+#mybatis相关
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.dbaa.entity
+
